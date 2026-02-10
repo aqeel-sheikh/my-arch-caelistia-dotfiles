@@ -3,8 +3,8 @@
 DOTFILES_DIR="$HOME/dotfiles"
 
 echo "Updating package lists..."
-pacman -Qne > "$DOTFILES_DIR/pkglist.txt"
-pacman -Qme > "$DOTFILES_DIR/aurlist.txt"
+pacman -Qqne > "$DOTFILES_DIR/pkglist.txt"
+pacman -Qqme > "$DOTFILES_DIR/aurlist.txt"
 
 echo "Backing up configs..."
 
@@ -23,7 +23,7 @@ CONFIGS=(
 for config in "${CONFIGS[@]}"; do
     if [ -e "$HOME/.config/$config" ]; then
         rm -rf "$DOTFILES_DIR/config/$config"
-        cp -r "$HOME/.config/$config" "$DOTFILES_DIR/config/"
+        cp -rL "$HOME/.config/$config" "$DOTFILES_DIR/config/"
     fi
 done
 

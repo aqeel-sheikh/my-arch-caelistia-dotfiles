@@ -1,5 +1,5 @@
-bibata-cursor-theme 2.0.7-1
-brave-bin 1:1.86.148-1
-google-chrome 144.0.7559.132-1
-paru 2.1.0-2
-paru-debug 2.1.0-2
+bibata-cursor-theme
+brave-bin
+google-chrome
+paru
+paru-debug

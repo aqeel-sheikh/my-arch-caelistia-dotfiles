@@ -1,34 +1,48 @@
-# Dotfiles - Arch Linux Backup
+# 🌌 my-arch-caelistia-dotfiles
 
-This repository contains my system configuration and package lists for an easy one-click restoration.
+A streamlined backup of my Arch Linux setup, featuring the **Caelestia** desktop environment (Hyprland based). Designed for quick restoration with a single script.
 
-## Contents
-- `pkglist.txt`: List of official pacman packages.
-- `aurlist.txt`: List of AUR packages.
-- `config/`: Configuration folders from `~/.config`.
-- `.bashrc`, `.bash_profile`: Shell configurations.
-- `update.sh`: Script to update the repo with current local settings.
-- `install.sh`: Script to restore everything on a new system.
+## ✨ Features
+- **WM:** Hyprland
+- **Terminal:** Ghostty
+- **Shell:** Fish & Bash (with Starship prompt)
+- **Editor:** Kate & Vim
+- **AUR Helper:** Paru
+- **Theme:** Caelestia / Caelestia-Resizer integration
 
-## How to use
+## 📂 Contents
+- `pkglist.txt`: Official Pacman packages.
+- `aurlist.txt`: AUR packages.
+- `config/`: Configuration for Hyprland, Ghostty, Fish, Fastfetch, and more.
+- `update.sh`: Script to sync local changes into this repository.
+- `install.sh`: One-click restoration script.
 
-### Update the backup
-Run the update script whenever you make changes to your system or configs:
-```bash
-./update.sh
-```
-Then commit and push your changes to GitHub.
+## 🚀 Restoration (New System)
 
-### Restore on a new system
-1. Clone the repo:
+1. **Install Git:**
    ```bash
-   git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+   sudo pacman -S --needed git
    ```
-2. Run the install script:
+
+2. **Clone the repository:**
+   ```bash
+   git clone https://github.com/aqeel-sheikh/my-arch-caelistia-dotfiles.git ~/dotfiles
+   ```
+
+3. **Run the installation script:**
    ```bash
    cd ~/dotfiles
    chmod +x install.sh
    ./install.sh
    ```
+   *Note: The script will prompt for your sudo password to install packages.*
 
-Note: The script will prompt for your password for `sudo` and `paru` operations.
+## 🔄 How to Update
+Whenever you change your configurations or install new packages, run the update script and push your changes:
+```bash
+cd ~/dotfiles
+./update.sh
+git add .
+git commit -m "Update system configurations"
+git push
+```
