@@ -29,11 +29,14 @@ make
 mpv
 nano
 networkmanager
+noto-fonts
+noto-fonts-emoji
 okular
 openssh
 sudo
 swayimg
 terminus-font
+ttf-dejavu
 unzip
 vim
 wget

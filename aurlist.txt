@@ -1,5 +1,6 @@
 bibata-cursor-theme
 brave-bin
+cursor-bin
 google-chrome
 paru
 paru-debug
