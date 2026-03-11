@@ -9,6 +9,7 @@ discord
 dolphin
 dosfstools
 efibootmgr
+exfat-utils
 fastfetch
 firefox
 fish
@@ -19,9 +20,13 @@ git
 grub
 gwenview
 htop
+intel-media-driver
 intel-ucode
 kate
+kitty
 libreoffice-fresh
+libva-intel-driver
+libva-utils
 linux
 linux-firmware
 loupe
@@ -33,6 +38,8 @@ noto-fonts
 noto-fonts-emoji
 okular
 openssh
+reflector
+strawberry
 sudo
 swayimg
 terminus-font

@@ -40,3 +40,4 @@ if status is-interactive
         echo -en "\e]133;A\e\\"
     end
 end
+alias pn=pnpm

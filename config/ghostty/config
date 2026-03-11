@@ -25,8 +25,8 @@ custom-shader = shaders/last_letter_zoom.glsl
 #custom-shader = shaders/zoom_and_aberration.glsl
 
 
-shell-integration = fish
+shell-integration = bash
 
 # [cursor]
 cursor-style=block
-command=/usr/bin/fish
+command=/usr/bin/bash

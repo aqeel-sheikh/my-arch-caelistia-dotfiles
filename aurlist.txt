@@ -1,6 +1,10 @@
 bibata-cursor-theme
+blesh-git
 brave-bin
 cursor-bin
+fabric-installer
 google-chrome
+minecraft-launcher
 paru
 paru-debug
+ventoy-bin

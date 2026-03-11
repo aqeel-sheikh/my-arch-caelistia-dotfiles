@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$HOME/Documents/dotfiles"
 
 echo "Updating package lists..."
 pacman -Qqne > "$DOTFILES_DIR/pkglist.txt"

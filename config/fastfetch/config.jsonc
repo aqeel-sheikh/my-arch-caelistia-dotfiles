@@ -3,65 +3,127 @@
     "logo": {
         "source": "~/.config/fastfetch/arch-logo.txt",
         "type": "file",
+        "padding": {
+            "right": 4
+        }
     },
     "display": {
         "separator": "  ",
-        "color": "white",
-        "constants": ["\u001b[37m", "\u001b[38;5;16m", "\u001b[38;5;17m", "\u001b[38;5;18m"]
+        "color": {
+            "keys": "blue",
+            "title": "cyan"
+        },
+        "constants": [
+            "\u001b[38;5;39m",
+            "\u001b[38;5;255m",
+            "\u001b[38;5;240m",
+            "\u001b[38;5;208m",
+            "\u001b[0m"
+        ]
     },
     "modules": [
         "break",
         {
             "type": "custom",
-            "key": "╭───────────────────────────────────╮"
-        },
-        {
-            "type": "kernel",
-            "key": "│ {$2}{$1}  kernel",
-            "format": "{$2}{release>22}{$1} │"
-        },
-        {
-            "type": "command",
-            "key": "│   uptime",
-            "text": "uptime -p | cut -d ' ' -f 2-",
-            "format": "{>22} │"
-        },
-        {
-            "type": "shell",
-            "key": "│ {$2}{$1}  shell ",
-            "format": "{$2}{pretty-name>22}{$1} │"
-        },
-        {
-            "type": "command",
-            "key": "│ {$3}{$1}  mem   ",
-            "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-            "format": "{$3}{>22}{$1} │"
-        },
-        {
-            "type": "packages",
-            "key": "│   pkgs  ",
-            "format": "{all>22} │"
-        },
-        {
-            "type": "command",
-            "key": "│ {$2}{$1}  user  ",
-            "text": "echo $USER",
-            "format": "{$2}{>22}{$1} │"
-        },
-        {
-            "type": "command",
-            "key": "│   hname ",
-            "text": "hostnamectl hostname",
-            "format": "{>22} │"
-        },
-        {
-            "type": "os",
-            "key": "│ {$4}󰻀{$1}  distro",
-            "format": "{$4}{pretty-name>22}{$1} │"
+            "format": "{$3}  ╭──────────────────────────────────────────╮{$5}"
         },
         {
             "type": "custom",
-            "key": "╰───────────────────────────────────╯"
+            "format": "{$3}  │{$5}  {$1} aqeel@archlinux {$3}                          │{$5}"
+        },
+        {
+            "type": "custom",
+            "format": "{$3}  ├──────────────────────────────────────────┤{$5}"
+        },
+        {
+            "type": "os",
+            "key": "  │ {$1}󰻀  distro  {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{pretty-name>24}{$3} │{$5}"
+        },
+        {
+            "type": "kernel",
+            "key": "  │ {$1}  kernel  {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{release>24}{$3} │{$5}"
+        },
+        {
+            "type": "wm",
+            "key": "  │ {$1}  wm      {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{pretty-name>24}{$3} │{$5}"
+        },
+        {
+            "type": "shell",
+            "key": "  │ {$1}  shell   {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{pretty-name>24}{$3} │{$5}"
+        },
+        {
+            "type": "custom",
+            "format": "{$3}  ├──────────────────────────────────────────┤{$5}"
+        },
+        {
+            "type": "cpu",
+            "key": "  │ {$4}  cpu     {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{name>24}{$3} │{$5}"
+        },
+        {
+            "type": "memory",
+            "key": "  │ {$4}  memory  {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{used>12} / {total>11}{$3} │{$5}"
+        },
+        {
+            "type": "command",
+            "key": "  │ {$4}  uptime  {$5}",
+            "keyWidth": 17,
+            "text": "uptime -p | sed 's/up //'",
+            "format": "{$2}{>24}{$3} │{$5}"
+        },
+        {
+            "type": "packages",
+            "key": "  │ {$4}  pkgs    {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{all>24}{$3} │{$5}"
+        },
+        {
+            "type": "custom",
+            "format": "{$3}  ├──────────────────────────────────────────┤{$5}"
+        },
+        {
+            "type": "display",
+            "key": "  │ {$1}󰍹  display {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{width}x{height} @ {refresh-rate>13}hz{$3} │{$5}"
+        },
+        {
+            "type": "terminal",
+            "key": "  │ {$1}  term    {$5}",
+            "keyWidth": 17,
+            "format": "{$2}{pretty-name>24}{$3} │{$5}"
+        },
+        {
+            "type": "command",
+            "key": "  │ {$1}  user    {$5}",
+            "keyWidth": 17,
+            "text": "echo $USER",
+            "format": "{$2}{>24}{$3} │{$5}"
+        },
+        {
+            "type": "custom",
+            "format": "{$3}  ├──────────────────────────────────────────┤{$5}"
+        },
+        {
+            "type": "colors",
+            "key": "  │ {$1}  colors  {$5}",
+            "symbol": "circle",
+            "format": "{>24}  {$3}│{$5}"
+        },
+        {
+            "type": "custom",
+            "format": "{$3}  ╰──────────────────────────────────────────╯{$5}"
         },
         "break"
     ]
